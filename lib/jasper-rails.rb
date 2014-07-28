@@ -43,8 +43,6 @@ module JasperRails
         Dir["#{File.dirname(__FILE__)}/java/*.jar"].each do |jar|
           classpaths << File::PATH_SEPARATOR + File.expand_path(jar)
         end
-puts "using classpaths:"
-puts classpaths
 
         Dir["lib/*.jar"].each do |jar|
           classpaths << File::PATH_SEPARATOR + File.expand_path(jar)
@@ -54,7 +52,7 @@ puts classpaths
       
       def self.render_pdf(jasper_file, datasource, parameters, options)
       
-        Rjb::load( ENV['CLASS_PATH'], ENV['JVM_ARGS'].split(",") ) unless Rjb::loaded?
+        Rjb::load( ENV['CLASS_PATH'], ENV['JVM_ARGS'] ) unless Rjb::loaded?
       
         # The code below is to workaround declaring constants within methods
         # We would like to delay these till a request is received to workaround Apache Passenger issue
