@@ -43,6 +43,8 @@ module JasperRails
         Dir["#{File.dirname(__FILE__)}/java/*.jar"].each do |jar|
           classpaths << File::PATH_SEPARATOR + File.expand_path(jar)
         end
+puts "using classpaths:"
+puts classpaths
 
         Dir["lib/*.jar"].each do |jar|
           classpaths << File::PATH_SEPARATOR + File.expand_path(jar)
