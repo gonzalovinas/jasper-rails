@@ -74,8 +74,7 @@ module JasperRails
         byteArrayInputStream        = Rjb::import 'java.io.ByteArrayInputStream'
         javaString                  = Rjb::import 'java.lang.String'
         jFreeChart                  = Rjb::import 'org.jfree.chart.JFreeChart'
-        barcode4j                   = Rjb::import 'org.krysalis.barcode4j'
-      
+
         options ||= {}
         parameters ||= {}
         jrxml_file  = jasper_file.sub(/\.jasper$/, ".jrxml")
